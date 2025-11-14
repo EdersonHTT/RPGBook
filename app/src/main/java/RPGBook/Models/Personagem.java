@@ -14,6 +14,36 @@ public class Personagem {
         this.forca = forca;
         this.agilidade = agilidade;
     }
+    
+    public void atacar( Personagem inimigo ) {
+        
+    }
+    
+    public void usarHabilidade( Personagem inimigo ) {
+        
+    }
+    
+    public void usarItem() {
+        
+    }
+    
+    public void fugir() {
+        
+    }
+    
+    public int rolarDados( int quantidade, int lados ) {
+       int valor = 0;
+       
+       for(int i=0; i < quantidade; i++) {
+           valor += Math.floor(Math.random()*lados);
+       }
+       
+       return valor;
+    }
+
+    public void calcularChanceDeAcerto( Personagem inimigo ) {
+        
+    }
 
     public String getNome() {
         return nome;
