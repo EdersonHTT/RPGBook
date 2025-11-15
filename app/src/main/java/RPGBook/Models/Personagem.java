@@ -15,8 +15,14 @@ public class Personagem {
         this.agilidade = agilidade;
     }
     
-    public void atacar( Personagem inimigo ) {
+    public String atacar( Personagem inimigo ) {
+        int chance = 50 + (agilidade - inimigo.getAgilidade()) * 5;
+        int rolagem = this.rolarDados( 1, 100);
         
+        if( chance >= rolagem ) {
+            int dano = forca + this.rolarDados(1, 6)
+            return "Acertou o ataque, dano causado foi: " +  
+        }
     }
     
     public void usarHabilidade( Personagem inimigo ) {
@@ -32,13 +38,7 @@ public class Personagem {
     }
     
     public int rolarDados( int quantidade, int lados ) {
-       int valor = 0;
-       
-       for(int i=0; i < quantidade; i++) {
-           valor += Math.floor(Math.random()*lados);
-       }
-       
-       return valor;
+       Dados.rolarDados(quantidade, lados);
     }
 
     public void calcularChanceDeAcerto( Personagem inimigo ) {
