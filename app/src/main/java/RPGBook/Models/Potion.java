@@ -1,6 +1,6 @@
 
 package RPGBook.Models;
 
-public class Equipamento {
+public class Potion {
     
 }

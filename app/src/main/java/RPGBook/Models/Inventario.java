@@ -27,4 +27,8 @@ public class Inventario {
         
         return false;
     }
+    
+    public String usarItem( Potion potion ) {
+        
+    }
 }
