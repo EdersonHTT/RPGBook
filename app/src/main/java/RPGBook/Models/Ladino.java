@@ -7,8 +7,8 @@ public class Ladino extends Personagem{
         super(name, 
                 Dados.rolarDados(2, 6), 
                 Dados.rolarDados(1, 6), 
-               Dados.rolarDados(2, 6), 
-                    Dados.rolarDados(4, 6) +4
+                Dados.rolarDados(2, 6), 
+                Dados.rolarDados(4, 6) +4
         );
     }
     
