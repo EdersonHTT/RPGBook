@@ -3,26 +3,33 @@ package RPGBook.Models;
 public class Personagem {
     private String nome;
     private int vida;
-    private int mana ;
+    private int vidaMax;
+    private int mana;    
+    private int manaMax;
     private int forca; 
     private int agilidade;
     
     public Personagem(String nome, int vida, int mana, int forca, int agilidade) {
         this.nome = nome;
         this.vida = vida;
-        this.mana = mana;
+        this.vidaMax = vida;
+        this.mana = mana;        
+        this.manaMax = mana;
         this.forca = forca;
         this.agilidade = agilidade;
     }
     
     public String atacar( Personagem inimigo ) {
-        int chance = 50 + (agilidade - inimigo.getAgilidade()) * 5;
-        int rolagem = this.rolarDados( 1, 100);
+        boolean chance = this.calcularChanceDeAcerto(inimigo);
         
-        if( chance >= rolagem ) {
-            int dano = forca + this.rolarDados(1, 6)
-            return "Acertou o ataque, dano causado foi: " +  
+        if( chance ) {
+            int dano = forca + this.rolarDados(1, 6);
+            inimigo.setVida(inimigo.getVida() - dano);
+            
+            return "O ataque surtiu efeito\nDano causado: " + dano; 
         }
+        
+        return "O ataque falhou"; 
     }
     
     public void usarHabilidade( Personagem inimigo ) {
@@ -38,11 +45,14 @@ public class Personagem {
     }
     
     public int rolarDados( int quantidade, int lados ) {
-       Dados.rolarDados(quantidade, lados);
+       return Dados.rolarDados(quantidade, lados);
     }
 
-    public void calcularChanceDeAcerto( Personagem inimigo ) {
+    public boolean calcularChanceDeAcerto( Personagem inimigo ) {
+        int chance = 50 + (agilidade - inimigo.getAgilidade()) * 5;
+        int rolagem = this.rolarDados( 1, 100);
         
+        return chance >= rolagem;
     }
 
     public String getNome() {
@@ -83,6 +93,22 @@ public class Personagem {
 
     public void setAgilidade(int agilidade) {
         this.agilidade = agilidade;
+    }
+    
+    public int getVidaMax() {
+        return vidaMax;
+    }
+
+    public void setVidaMax(int vidaMax) {
+        this.vidaMax = vidaMax;
+    }
+
+    public int getManaMax() {
+        return manaMax;
+    }
+
+    public void setManaMax(int manaMax) {
+        this.manaMax = manaMax;
     }
 
 }
