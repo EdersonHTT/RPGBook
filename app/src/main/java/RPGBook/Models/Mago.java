@@ -12,4 +12,15 @@ public class Mago extends Personagem{
         );
     }
     
+    public String usarHabilidade( Personagem inimigo, int rodadaHabilidade ) {
+        if( rodadaHabilidade == 0 ) {
+            int dano = forca + this.rolarDados(2, 6);
+            inimigo.setVida(inimigo.getVida() - dano);
+            this.mana -= 5;
+            
+            return "Lança um Gaster Blaster\nDano causado: " + dano; 
+        }
+        return "Não pode usar a habilidade\nFaltam " + rodadaHabilidade + " rodadas" ; 
+    }
+    
 }

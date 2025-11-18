@@ -1,13 +1,13 @@
 package RPGBook.Models;
 
 public class Personagem {
-    private String nome;
-    private int vida;
-    private int vidaMax;
-    private int mana;    
-    private int manaMax;
-    private int forca; 
-    private int agilidade;
+    protected String nome;
+    protected int vida;
+    protected int vidaMax;
+    protected int mana;    
+    protected int manaMax;
+    protected int forca; 
+    protected int agilidade;
     
     public Personagem(String nome, int vida, int mana, int forca, int agilidade) {
         this.nome = nome;
@@ -32,8 +32,15 @@ public class Personagem {
         return "O ataque falhou"; 
     }
     
-    public void usarHabilidade( Personagem inimigo ) {
-        
+    public String usarHabilidade( Personagem inimigo, int rodadaHabilidade ) {
+        if( rodadaHabilidade == 0 ) {
+            int dano = forca + this.rolarDados(2, 6);
+            inimigo.setVida(inimigo.getVida() - dano);
+            this.mana -= 5;
+            
+            return "Lança um ataque pesado\nDano causado: " + dano; 
+        }
+        return "Não pode usar a habilidade\nFaltam " + rodadaHabilidade + " rodadas" ; 
     }
     
     public void usarItem() {

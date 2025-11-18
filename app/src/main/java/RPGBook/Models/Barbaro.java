@@ -11,4 +11,15 @@ public class Barbaro extends Personagem{
         );
     }
     
+    public String usarHabilidade( Personagem inimigo, int rodadaHabilidade ) {
+        if( rodadaHabilidade == 0 ) {
+            int dano = this.forca + this.rolarDados(2, 6) + 5;
+            inimigo.setVida(inimigo.getVida() - dano);
+            this.mana -= 5;
+
+            return "Usa o Golpe do Rei\nDano causado: " + dano; 
+        }
+        return "Não pode usar a habilidade\nFaltam " + rodadaHabilidade + " rodadas" ; 
+    }
+    
 }
