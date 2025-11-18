@@ -12,4 +12,15 @@ public class Arqueiro extends Personagem{
         );
     }
     
+    public String usarHabilidade( Personagem inimigo, int rodadaHabilidade ) {
+        if( rodadaHabilidade == 0 ) {
+            int dano = this.forca + this.rolarDados(4, 4);
+            inimigo.setVida(inimigo.getVida() - dano);
+            this.mana -= 5;
+
+            return "Usa Tormenta de Lanças\nDano causado: " + dano; 
+        }
+        return "Não pode usar a habilidade\nFaltam " + rodadaHabilidade + " rodadas" ; 
+    }
+    
 }

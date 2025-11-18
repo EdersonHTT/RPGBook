@@ -12,4 +12,15 @@ public class Ladino extends Personagem{
         );
     }
     
+    public String usarHabilidade( Personagem inimigo, int rodadaHabilidade ) {
+        if( rodadaHabilidade == 0 ) {
+            int dano = this.forca + this.rolarDados(3, 6);
+            inimigo.setVida(inimigo.getVida() - dano);
+            this.mana -= 5;
+
+            return "Acerta um Corte Sequencial\nDano causado: " + dano; 
+        }
+        return "Não pode usar a habilidade\nFaltam " + rodadaHabilidade + " rodadas" ; 
+    }
+    
 }
