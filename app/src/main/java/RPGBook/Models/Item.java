@@ -3,5 +3,8 @@ package RPGBook.Models;
 
 public class Item {
     protected String nome;
-    protected 
+    
+    public Item ( String nome ) {
+        this.nome = nome;
+    }
 }
