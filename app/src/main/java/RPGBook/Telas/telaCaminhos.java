@@ -41,8 +41,6 @@ public class TelaCaminhos extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setPreferredSize(new java.awt.Dimension(843, 737));
 
-        mapaLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Mapa (1).png"))); // NOI18N
-
         btnDireita.setBackground(new java.awt.Color(0, 0, 0));
         btnDireita.setForeground(new java.awt.Color(255, 255, 255));
         btnDireita.setText("-->");

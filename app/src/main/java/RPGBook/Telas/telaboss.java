@@ -8,13 +8,17 @@ package TrabalhoRPG;
  *
  * @author KAUAVICTORWEBER
  */
-public class Telaboss extends javax.swing.JFrame {
+public class A extends javax.swing.JFrame {
 
     /**
      * Creates new form telaboss
      */
-    public Telaboss() {
+    public A() {
         initComponents();
+        jLabel1.setIcon(new javax.swing.ImageIcon(
+        getClass().getResource("/UNDYNE (1).png")
+    ));
+
     }
 
     /**
@@ -35,7 +39,7 @@ public class Telaboss extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CORE_locationBOSS (1).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RPGBook/Telas/UNDYNE (1).png"))); // NOI18N
 
         areadeTexto.setBackground(new java.awt.Color(0, 0, 0));
         areadeTexto.setColumns(20);
@@ -100,21 +104,35 @@ public class Telaboss extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Telaboss.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(A.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Telaboss.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(A.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Telaboss.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(A.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Telaboss.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(A.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Telaboss().setVisible(true);
+                new A().setVisible(true);
             }
         });
     }
