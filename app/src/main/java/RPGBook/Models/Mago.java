@@ -12,6 +12,19 @@ public class Mago extends Personagem{
         );
     }
     
+    public String atacar( Personagem inimigo ) {
+        boolean chance = this.calcularChanceDeAcerto(inimigo);
+        
+        if( chance ) {
+            int dano = manaMax + this.rolarDados(1, 6);
+            inimigo.setVida(inimigo.getVida() - dano);
+            
+            return "O ataque surtiu efeito\nDano causado: " + dano; 
+        }
+        
+        return "O ataque falhou"; 
+    }
+    
     public String usarHabilidade( Personagem inimigo, int rodadaHabilidade ) {
         if( rodadaHabilidade == 0 ) {
             int dano = forca + this.rolarDados(2, 6);
