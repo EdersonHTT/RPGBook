@@ -4,7 +4,7 @@ public class Personagem {
     protected String nome;
     protected int vida;
     protected int vidaMax;
-    protected int mana;    
+    int mana;    
     protected int manaMax;
     protected int forca; 
     protected int agilidade;
@@ -43,12 +43,12 @@ public class Personagem {
         return "Não pode usar a habilidade\nFaltam " + rodadaHabilidade + " rodadas" ; 
     }
     
-    public void usarItem() {
+    public void usarItem(Item item) {
         
     }
     
-    public void fugir() {
-        
+    public boolean fugir(Personagem inimigo) {
+        return calcularChanceDeAcerto(inimigo);
     }
     
     public int rolarDados( int quantidade, int lados ) {

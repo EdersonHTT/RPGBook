@@ -2,13 +2,13 @@
 package RPGBook.Models;
 
 public class Arqueiro extends Personagem{
-
+    
     public Arqueiro(String name) {
         super(name, 
-            Dados.rolarDados(2, 6), 
-            Dados.rolarDados(1, 6), 
-            Dados.rolarDados(2, 6), 
-            Dados.rolarDados(4, 6) +3
+            Math.max(Dados.rolarDados(2, 6), 5),
+            Math.max(Dados.rolarDados(1, 6), 5),
+            Math.max(Dados.rolarDados(2, 6), 5),
+            Math.max(Dados.rolarDados(4, 6) +3, 5)
         );
     }
     
@@ -22,5 +22,4 @@ public class Arqueiro extends Personagem{
         }
         return "Não pode usar a habilidade\nFaltam " + rodadaHabilidade + " rodadas" ; 
     }
-    
 }

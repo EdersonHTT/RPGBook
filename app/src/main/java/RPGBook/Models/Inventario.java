@@ -4,7 +4,7 @@ package RPGBook.Models;
 import java.util.ArrayList;
 
 public class Inventario {
-    private ArrayList<Item> inventario = new ArrayList<>();
+    private final ArrayList<Item> inventario = new ArrayList<>();
     
     public ArrayList<Item> listar() {
         return inventario;
@@ -29,6 +29,6 @@ public class Inventario {
     }
     
     public String usarItem( Potion potion ) {
-        
+        return "";
     }
 }

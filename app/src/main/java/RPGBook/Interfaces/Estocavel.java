@@ -2,7 +2,7 @@
 package RPGBook.Interfaces;
 
 public interface Estocavel {
-    private int quantidade;
+    //private int quantidade;
     
     public void incrementar( int quantia );
     
